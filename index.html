@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h2>Tax Calculator</h2>
+        <form id="taxForm">
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <select class="form-control" id="age" required>
+              <option value="<40">&lt; 40</option>
+              <option value=">=40 <60">&ge; 40 &lt; 60</option>
+              <option value=">=60">&ge; 60</option>
+            </select>
+            <div class="error-icon" id="age-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="income">Gross Annual Income:</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="income"
+                aria-describedby="income-error"
+                required
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i
+                    class="error-icon"
+                    id="income-error-icon"
+                    data-toggle="tooltip"
+                    data-placement="left"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="deductions">Deductions:</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="deductions"
+                aria-describedby="deductions-error"
+                required
+              />
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i
+                    class="error-icon"
+                    id="deductions-error-icon"
+                    data-toggle="tooltip"
+                    data-placement="left"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" id="calculate">
+            Calculate Tax
+          </button>
+        </form>
+      </div>
+
+      <div class="modal fade" id="resultModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Tax Amount</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="result"></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

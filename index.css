@@ -1,0 +1,32 @@
+.error-icon {
+  display: none;
+  float: right;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  line-height: 20px;
+}
+
+.error-icon:hover::after {
+  content: attr(data-error);
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 1;
+  margin-left: 10px;
+}
+.main {
+  width: 50%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10%;
+}
